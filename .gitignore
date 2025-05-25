@@ -1,0 +1,19 @@
+# node_modules (para frontend y backend)
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Dependencias de Vite
+frontend/dist/
+
+# Salidas temporales
+*.log
+*.env
+.env.*
+
+# macOS / VSCode
+.DS_Store
+.vscode/
+
+# json-server data temporal (si usas .tmp o db editada)
+backend/*.tmp.json

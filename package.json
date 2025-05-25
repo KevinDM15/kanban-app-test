@@ -3,5 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "kevindm15",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "server": "yarn --cwd backend start",
+    "client": "yarn --cwd frontend dev",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
 }
