@@ -3,8 +3,8 @@ import type { UserDto } from '../../services/users/dto/user.dto';
 
 type CustomSelectProps = {
   users: UserDto[];
-  selectedUserId?: string;
-  onSelect: (userId: string) => void;
+  selectedUserId?: number;
+  onSelect: (userId: number) => void;
 };
 
 export const CustomUserSelect = ({ users, selectedUserId, onSelect }: CustomSelectProps) => {

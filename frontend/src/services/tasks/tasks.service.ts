@@ -4,7 +4,7 @@ import type { TaskDto } from './dto/task.dto';
 class TasksService {
   async getTasks(): Promise<TaskDto[]> {
     try {
-      const response = await ApiGateway.get<TaskDto[]>('/tasks');
+      const response = await ApiGateway.get<TaskDto[]>('/tasks?_expand=userId');
       return response.data;
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -17,7 +17,7 @@ class TasksService {
       const response = await ApiGateway.post<TaskDto>('/tasks', {
         title: task.title,
         description: task.description,
-        assignedTo: task.assignedTo,
+        userId: task.userId,
         status: task.status || 'pendiente',
       });
       console.log('Task created successfully:', response);

@@ -32,7 +32,12 @@ export const AddTaskModal = ({
     reset,
     formState: { errors },
   } = useForm<TaskDto>({
-    defaultValues: initialData || undefined,
+    defaultValues: {
+      title: initialData?.title || '',
+      description: initialData?.description || '',
+      userId: initialData?.userId || undefined,
+      status: initialData?.status || 'pendiente',
+    }
   });
 
   const submit = (data: TaskDto) => {
@@ -104,7 +109,7 @@ export const AddTaskModal = ({
             </label>
             <Controller
               control={control}
-              name="assignedTo"
+              name="userId"
               rules={{ required: 'Debe asignar la tarea a un usuario' }}
               render={({ field: { onChange, value } }) => (
                 <CustomUserSelect
@@ -114,16 +119,16 @@ export const AddTaskModal = ({
                 />
               )}
             />
-            {errors.assignedTo && (
+            {errors.userId && (
               <p className="text-red-500 text-xs">
-                {errors.assignedTo.message}
+                {errors.userId.message}
               </p>
             )}
           </div>
 
           {/* Nota de estado */}
           {modalIdentifier === ModalIdentifiers.addTask && (
-            <p className="text-xs text-gray-400 italic">
+            <p className="text-xs text-gray-400">
               Esta tarea se creará con estado{' '}
               <span className="text-blue-600 font-medium">pendiente</span>.
             </p>
