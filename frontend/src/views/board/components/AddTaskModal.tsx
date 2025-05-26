@@ -4,9 +4,9 @@ import {
   ModalIdentifiers,
   type ModalIdentifier,
 } from '../../../hooks/useModal';
-import { useGetAllUsers } from '../../../hooks/users/useGetAllUsers';
 import type { TaskDto } from '../../../services/tasks/dto/task.dto';
 import { Controller, useForm } from 'react-hook-form';
+import type { UserDto } from '../../../services/users/dto/user.dto';
 
 type AddProductModalProps = {
   isOpen: (id: ModalIdentifier) => boolean;
@@ -14,6 +14,7 @@ type AddProductModalProps = {
   modalIdentifier: ModalIdentifier;
   initialData?: TaskDto | null;
   onSubmit?: (data: TaskDto) => void;
+  users: UserDto[]
 };
 
 export const AddTaskModal = ({
@@ -22,9 +23,8 @@ export const AddTaskModal = ({
   modalIdentifier,
   initialData = null,
   onSubmit,
+  users,
 }: AddProductModalProps) => {
-  const { users } = useGetAllUsers();
-
   const {
     register,
     control,

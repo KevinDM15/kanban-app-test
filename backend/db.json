@@ -9,7 +9,7 @@
     },
     {
       "id": "2",
-      "title": "Configurar json-serverrrr",
+      "title": "Configurar json-server",
       "description": "Mockear API REST con datos de prueba",
       "status": "pendiente",
       "user_id": "1"
@@ -20,20 +20,6 @@
       "description": "Permitir mover tareas entre columnas",
       "status": "pendiente",
       "user_id": "3"
-    },
-    {
-      "id": "4",
-      "title": "asdad",
-      "description": "asdasd",
-      "status": "pendiente",
-      "user_id": "1"
-    },
-    {
-      "id": "2756",
-      "title": "Nueva tarea",
-      "description": "Kanba",
-      "user_id": "1",
-      "status": "pendiente"
     }
   ],
   "users": [

@@ -12,7 +12,7 @@ export const CustomUserSelect = ({ users, selectedUserId, onSelect }: CustomSele
   const [isClosing, setIsClosing] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const selectedUser = users.find((u) => u.id === selectedUserId);
+  const selectedUser = users.find((u) => String(u.id) === String(selectedUserId));
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {

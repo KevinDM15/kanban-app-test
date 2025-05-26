@@ -4,12 +4,13 @@ import { Icon } from '@iconify/react';
 import { useBoardContext } from './hooks/tasks/useBoardContext';
 import { useState } from 'react';
 import type { TaskDto } from '../../services/tasks/dto/task.dto';
+import { useGetAllUsers } from '../../hooks/users/useGetAllUsers';
 
 export const Board = () => {
-  const { tasks, loading, updateTask, createTask, updateTaskStatus } = useBoardContext();
+  const { tasks, loading, updateTask, createTask, updateTaskStatus, deleteTask } = useBoardContext();
   const { isModalOpen, closeModal, openModal } = useModal();
   const [taskSelected, setTaskSelected] = useState<TaskDto | null>(null);
-
+  const { users } = useGetAllUsers();
 
   const columns = [
     {
@@ -53,6 +54,7 @@ export const Board = () => {
     <div className="w-full max-w-9/12 mx-auto py-20">
       {isModalOpen(ModalIdentifiers.addTask) && (
         <AddTaskModal
+          users={users}
           isOpen={isModalOpen}
           onClose={closeModal}
           modalIdentifier={ModalIdentifiers.addTask}
@@ -62,6 +64,7 @@ export const Board = () => {
 
       {isModalOpen(ModalIdentifiers.editTask) && (
         <AddTaskModal
+          users={users}
           isOpen={isModalOpen}
           onClose={closeModal}
           modalIdentifier={ModalIdentifiers.editTask}
@@ -104,8 +107,10 @@ export const Board = () => {
                     <BoardTask
                       key={task.id}
                       task={task}
+                      users={users}
                       onChangeStatus={updateTaskStatus}
                       onClick={() => handleEditTask(task)}
+                      onDelete={deleteTask}
                     />
                   ))}
                 </BoardColumn>

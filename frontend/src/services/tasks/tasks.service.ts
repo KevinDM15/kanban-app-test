@@ -20,7 +20,6 @@ class TasksService {
         user_id: Number(task.user_id),
         status: task.status || 'pendiente',
       });
-      console.log('Task created successfully:', response);
       return response.data;
     } catch (error) {
       console.error('Error creating task:', error);
@@ -28,10 +27,9 @@ class TasksService {
     }
   }
 
-  async updateTask(taskId: string, task: TaskDto): Promise<TaskDto> {
+  async updateTask(taskId: number, task: TaskDto): Promise<TaskDto> {
     try {
       const response = await ApiGateway.put<TaskDto>(`/tasks/${taskId}`, task);
-      console.log('Task updated successfully:', response);
 
       return response.data;
     } catch (error) {
@@ -40,10 +38,9 @@ class TasksService {
     }
   }
 
-  async deleteTask(taskId: string): Promise<void> {
+  async deleteTask(taskId: number): Promise<void> {
     try {
       await ApiGateway.delete(`/tasks/${taskId}`);
-      console.log(`Task ${taskId} deleted successfully`);
     } catch (error) {
       console.error(`Error deleting task ${taskId}:`, error);
       throw error;
