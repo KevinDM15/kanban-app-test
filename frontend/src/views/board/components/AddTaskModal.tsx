@@ -35,7 +35,7 @@ export const AddTaskModal = ({
     defaultValues: {
       title: initialData?.title || '',
       description: initialData?.description || '',
-      userId: initialData?.userId || undefined,
+      user_id: initialData?.user_id || undefined,
       status: initialData?.status || 'pendiente',
     }
   });
@@ -109,7 +109,7 @@ export const AddTaskModal = ({
             </label>
             <Controller
               control={control}
-              name="userId"
+              name="user_id"
               rules={{ required: 'Debe asignar la tarea a un usuario' }}
               render={({ field: { onChange, value } }) => (
                 <CustomUserSelect
@@ -119,9 +119,9 @@ export const AddTaskModal = ({
                 />
               )}
             />
-            {errors.userId && (
+            {errors.user_id && (
               <p className="text-red-500 text-xs">
-                {errors.userId.message}
+                {errors.user_id.message}
               </p>
             )}
           </div>

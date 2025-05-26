@@ -70,9 +70,9 @@ export const Board = () => {
         />
       )}
 
-      <h1 className="font-extrabold text-5xl mb-4">Personal</h1>
+      <h1 className="font-extrabold text-5xl mb-4">Tablero Kanban</h1>
       <p className="mb-10 text-gray-500 text-xl">
-        A board to keep track of personal tasks.
+        Organiza tus tareas de manera visual y eficiente con nuestro tablero Kanban.
       </p>
 
       <div className="rounded-lg p-10 bg-gray-100 max-h-full shadow-md">

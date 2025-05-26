@@ -1,67 +1,74 @@
 {
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Diseñar interfaz Kanban",
       "description": "Crear estructura básica de columnas",
       "status": "completado",
-      "userId": 4
+      "user_id": "5"
     },
     {
-      "id": 2,
-      "title": "Configurar json-server",
+      "id": "2",
+      "title": "Configurar json-serverrrr",
       "description": "Mockear API REST con datos de prueba",
       "status": "pendiente",
-      "userId": 2
+      "user_id": "1"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Implementar lógica de arrastre",
       "description": "Permitir mover tareas entre columnas",
       "status": "pendiente",
-      "userId": 1
+      "user_id": "3"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "asdad",
       "description": "asdasd",
       "status": "pendiente",
-      "userId": 3
+      "user_id": "1"
+    },
+    {
+      "id": "2756",
+      "title": "Nueva tarea",
+      "description": "Kanba",
+      "user_id": "1",
+      "status": "pendiente"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Ana López",
       "email": "analopez@gmail.com",
       "avatarUrl": "https://ui-avatars.com/api/?name=Ana+Lopez&background=0D8ABC&color=fff&size=128"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Luis Pérez",
       "email": "luisperez@gmail.com",
       "avatarUrl": "https://ui-avatars.com/api/?name=Luis+Perez&background=0D8ABC&color=fff&size=128"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "María García",
       "email": "mariagarcia@gmail.com",
       "avatarUrl": "https://ui-avatars.com/api/?name=Maria+Garcia&background=0D8ABC&color=fff&size=128"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Carlos Sánchez",
       "email": "carlossanchez@gmail.com",
       "avatarUrl": "https://ui-avatars.com/api/?name=Carlos+Sanchez&background=0D8ABC&color=fff&size=128"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "John Doe",
       "email": "johndoe@gmail.com",
       "avatarUrl": "https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff&size=128"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Huan Li",
       "email": "huanli@gmail.com",
       "avatarUrl": "https://ui-avatars.com/api/?name=Huan+Li&background=0D8ABC&color=fff&size=128"

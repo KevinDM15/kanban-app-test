@@ -1,9 +1,12 @@
+import type { UserDto } from "../../users/dto/user.dto";
+
 export interface TaskDto {
   id: string;
   title: string;
   description: string;
   status: string; // e.g., 'pending', 'in-progress', 'completed'
-  userId: number; // User ID of the person assigned to the task
+  user_id: number;
+  user: UserDto;
 }
 
 export const AVAILABLE_TASK_STATUSES = [

@@ -1,3 +1,4 @@
+import { useGetAllUsers } from "../../../hooks/users/useGetAllUsers";
 import { AVAILABLE_TASK_STATUSES, type TaskDto } from "../../../services/tasks/dto/task.dto";
 import { cn } from "../../../utils/utils";
 import { StatusDropdown } from "./StatusDropdown";
@@ -9,7 +10,9 @@ type BoardTaskProps = {
 };
 
 export const BoardTask = ({ task, onClick, onChangeStatus }: BoardTaskProps) => {
-  const { id, title, description, status } = task;
+  const { id, title, description, status, user_id } = task;
+  const { users } = useGetAllUsers();
+  const assignedUser = users.find((u) => u.id === user_id);
 
   const handleStatusChange = (newStatus: string) => {
     if (onChangeStatus) {
@@ -37,11 +40,14 @@ export const BoardTask = ({ task, onClick, onChangeStatus }: BoardTaskProps) => 
       <div className={cn(`bg-white p-4 rounded-lg shadow-sm rounded-t-none border-t-6 ${getColorByStatus(status)}`)}>
         <div className="flex justify-between items-center mb-2">
           <h3 className="font-bold text-lg">{title}</h3>
-          <img
-            src="https://placehold.co/600x400/000000/png?text=A"
-            alt="User"
-            className="rounded-full w-7 h-7 mr-2 object-cover"
-          />
+          {assignedUser && (
+            <img
+              src={assignedUser.avatarUrl}
+              alt={assignedUser.name}
+              title={assignedUser.name}
+              className="rounded-full w-7 h-7 mr-2 object-cover"
+            />
+          )}
         </div>
 
         <div className="flex">
