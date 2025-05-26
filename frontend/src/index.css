@@ -3,6 +3,7 @@
   src: url("/assets/fonts/Inter/Inter-VariableFont_opsz,wght.tff");
 }
 
+/* Importar Tailwind CSS */
 @import "tailwindcss";
 
 @theme {
