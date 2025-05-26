@@ -15,7 +15,7 @@ Este proyecto es una aplicacion web para la gestion de tareas.
 
 ```bash
 git clone https://github.com/KevinDM15/kanban-app-test.git
-cd test-conteo
+cd kanban-app-test
 ```
 
 - Instalar las dependencias
@@ -24,7 +24,7 @@ cd test-conteo
 yarn install
 ```
 
-- Iniciar el servidor de desarrollo
+- Iniciar el servidor de desarrollo frontend y backend API con JSON-SERVER
 
 ```bash
 yarn dev
